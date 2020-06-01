@@ -1,0 +1,20 @@
+<component name="libraryTable">
+  <library name="scala-sdk-2.12.4" type="Scala">
+    <properties>
+      <compiler-classpath>
+        <root url="file://D:/Scala2.12.4/lib/scala-compiler.jar" />
+        <root url="file://D:/Scala2.12.4/lib/scala-library.jar" />
+        <root url="file://D:/Scala2.12.4/lib/scala-reflect.jar" />
+      </compiler-classpath>
+    </properties>
+    <CLASSES>
+      <root url="jar://D:/Scala2.12.4/lib/scala-library.jar!/" />
+      <root url="jar://D:/Scala2.12.4/lib/scala-reflect.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://D:/Scala2.12.4/api/jars/scala-library-2.12.4-javadoc.jar!/" />
+      <root url="jar://D:/Scala2.12.4/api/jars/scala-reflect-2.12.4-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES />
+  </library>
+</component>

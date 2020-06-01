@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="realTime-realTime" />
+        <module name="reamTime-common" />
+        <module name="dw-chart" />
+        <module name="publish" />
+        <module name="realTime-logger" />
+        <module name="realTime-mock" />
+        <module name="realtime-logger" />
+        <module name="realTime-publish" />
+      </profile>
+    </annotationProcessing>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="dw-chart" options="" />
+      <module name="publish" options="-parameters" />
+      <module name="realTime-logger" options="-parameters" />
+      <module name="realTime-mock" options="-parameters" />
+      <module name="realTime-publish" options="-parameters" />
+      <module name="realTime-realTime" options="-parameters" />
+      <module name="realtime-logger" options="-parameters" />
+      <module name="reamTime-common" options="-parameters" />
+    </option>
+  </component>
+</project>
