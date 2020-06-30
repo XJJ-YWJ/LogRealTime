@@ -1,0 +1,18 @@
+
+#启动Kafka命令
+./kafka-server-start.sh ../config/server.properties 1>/dev/null 2>&1 &
+
+#创建TOPIC
+./kafka-topics.sh --create --zookeeper 192.168.30.67:2181 --replication-factor 1 --partitions 1 --topic ORDER
+
+#创建生产者
+./kafka-console-producer.sh --broker-list 192.168.30.67:9092 --topic ORDER
+
+#创建消费者
+./kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic ORDER --from-beginning
+
+#启动ES
+./elasticsearch 1>/dev/null 2>&1 &
+
+#启动Kibana
+nohup ./kibana 1>/dev/null 2>&1 &

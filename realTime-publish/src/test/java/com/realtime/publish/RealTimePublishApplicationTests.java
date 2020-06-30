@@ -1,6 +1,7 @@
 package com.realtime.publish;
 
 import com.realtime.publish.Bean.StartUpLog;
+import com.realtime.publish.Service.OrderService;
 import org.elasticsearch.common.ParseField;
 import org.elasticsearch.common.xcontent.XContentBuilder;
 import org.elasticsearch.index.query.BoolQueryBuilder;
@@ -26,12 +27,16 @@ import org.springframework.data.elasticsearch.core.query.SourceFilter;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
+import java.util.TreeMap;
 
 @SpringBootTest
 class RealTimePublishApplicationTests {
 
     @Autowired
     ElasticsearchOperations eo;
+
+    @Autowired
+    OrderService orderService;
 
     @Test
     void contextLoads() {
@@ -56,5 +61,18 @@ class RealTimePublishApplicationTests {
         }
 
     }
+
+    @Test
+    void contextLoads1() {
+        Double amount = orderService.getOrderAmount("2020-06-29");
+        System.out.println(amount);
+
+        Map<Integer, Double> map = orderService.getOrderAmontHourMap("2020-06-29");
+
+        for (Map.Entry<Integer,Double> x : map.entrySet()) {
+            System.out.println(x.getKey()+":::"+x.getValue());
+        }
+    }
+
 
 }

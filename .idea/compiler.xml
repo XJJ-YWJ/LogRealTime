@@ -6,6 +6,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="realTime-canal" />
         <module name="realTime-realTime" />
         <module name="reamTime-common" />
         <module name="dw-chart" />
@@ -21,6 +22,7 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="dw-chart" options="" />
       <module name="publish" options="-parameters" />
+      <module name="realTime-canal" options="-parameters" />
       <module name="realTime-logger" options="-parameters" />
       <module name="realTime-mock" options="-parameters" />
       <module name="realTime-publish" options="-parameters" />

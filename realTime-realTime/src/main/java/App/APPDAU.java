@@ -97,7 +97,7 @@ public class APPDAU {
                     jedis.sadd(key,value);
                 }
                 //插入数据到ES
-                EsUtil.indexBulk(Constant.ES_INDEX_DAU,list);
+                EsUtil.indexBulkStartUpLog(Constant.ES_INDEX_DAU,list);
 
                 //关闭连接
                 jedis.close();

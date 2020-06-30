@@ -23,6 +23,7 @@ public class KafkaUtil {
         Collection<String> TOPICS = new HashSet<>();
         TOPICS.add(Constant.KAFKA_TOPIC_STARTUP);
         TOPICS.add(Constant.KAFKA_TOPIC_EVENT);
+        TOPICS.add(Constant.KAFKA_TOPIC_ORDER);
 
         Map<String, Object> kafkaPrams = new HashMap<>();
         //Kafka服务监听端口

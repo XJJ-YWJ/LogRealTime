@@ -22,6 +22,7 @@
         <module>realTime-logger</module>
         <module>realTime-realTime</module>
         <module>realTime-publish</module>
+        <module>realTime-canal</module>
     </modules>
 
 

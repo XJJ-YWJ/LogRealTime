@@ -3,6 +3,7 @@
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/dw-chart/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/dw-chart/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/realTime-canal/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/realTime-logger/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/realTime-mock/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/realTime-mock/src/main/resources" charset="UTF-8" />

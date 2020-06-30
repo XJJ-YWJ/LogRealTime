@@ -1,4 +1,4 @@
-package Bean;
+package com.realtime.publish.Bean;
 
 import java.io.Serializable;
 

@@ -2,6 +2,7 @@ package com.realtime.publish.Controller;
 
 
 import com.alibaba.fastjson.JSON;
+import com.realtime.publish.Service.OrderService;
 import com.realtime.publish.Service.StartUpService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,6 +19,9 @@ public class StartUpController {
     @Autowired
     private StartUpService ss;
 
+    @Autowired
+    private OrderService os;
+
     @GetMapping("/realtime-total")
     public String getTotal(@RequestParam("date") String date){
 
@@ -27,6 +31,13 @@ public class StartUpController {
         dauMap.put("name","新增日活");
         dauMap.put("value",ss.getTotal(date));
         list.add(dauMap);
+
+        Map<String , Object> orderMap = new HashMap<>();
+        orderMap.put("id","orderAmount");
+        orderMap.put("name","新增交易额");
+        Double amount = os.getOrderAmount(date);
+        orderMap.put("value",amount);
+        list.add(orderMap);
 
         return JSON.toJSONString(list);
     }
@@ -44,10 +55,20 @@ public class StartUpController {
             hourMap.put("yesterday",yesterdayDauMap);
 
             return JSON.toJSONString(hourMap);
-        }
+        }else if("orderAmount".equals(id)){
+            Map<Integer, Double> todayOrderMap = os.getOrderAmontHourMap(date);
+            Map<Integer, Double> yesterdayOrderMap = os.getOrderAmontHourMap(getYesterday(date));
 
+            Map<String , Map<Integer,Double>> hourMap = new HashMap<>();
+            hourMap.put("today",todayOrderMap);
+            hourMap.put("yesterday",yesterdayOrderMap);
+
+            return JSON.toJSONString(hourMap);
+        }
         return null;
     }
+
+
 
 
     //获取指定日期前一天的日期

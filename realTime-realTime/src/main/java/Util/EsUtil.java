@@ -1,5 +1,6 @@
 package Util;
 
+import Bean.OrderLog;
 import Bean.StartUpLog;
 import io.searchbox.client.JestClient;
 import io.searchbox.client.JestClientFactory;
@@ -58,7 +59,27 @@ public class EsUtil {
      * @param indexName
      * @param list
      */
-    public static void indexBulk(String indexName, List<StartUpLog> list){
+    public static void indexBulkStartUpLog(String indexName, List<StartUpLog> list){
+        JestClient client = getJestClient();
+        Bulk.Builder builder = new Bulk.Builder().defaultIndex(indexName).defaultType("_doc");
+        for (Object doc : list) {
+            Index index = new Index.Builder(doc).build();
+            builder.addAction(index);
+        }
+
+        try {
+            List<BulkResult.BulkResultItem> items = client.execute(builder.build()).getItems();
+            System.out.println("保存:"+items.size());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }finally {
+            //关闭资源
+            Close(client);
+        }
+
+    }
+
+    public static void indexBulkOrderLog(String indexName, List<OrderLog> list){
         JestClient client = getJestClient();
         Bulk.Builder builder = new Bulk.Builder().defaultIndex(indexName).defaultType("_doc");
         for (Object doc : list) {
